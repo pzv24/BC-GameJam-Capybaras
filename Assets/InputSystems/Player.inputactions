@@ -1,0 +1,34 @@
+{
+    "name": "Player",
+    "maps": [
+        {
+            "name": "BallLauncher",
+            "id": "831dc131-f4db-4cd0-9d0a-8c58d77b315e",
+            "actions": [
+                {
+                    "name": "RotateLeft",
+                    "type": "Button",
+                    "id": "21a61bfc-52dc-434c-b81f-6750c24acc46",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f6ae399e-0588-476d-9803-a4df2385e06b",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
