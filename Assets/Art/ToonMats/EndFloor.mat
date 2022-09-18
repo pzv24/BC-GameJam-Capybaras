@@ -24,5 +24,5 @@ Material:
     m_Floats:
     - _Shades: 3
     m_Colors:
-    - _Albedo: {r: 1, g: 1, b: 1, a: 1}
+    - _Albedo: {r: 0.85490197, g: 0.45490196, b: 0.13333334, a: 1}
   m_BuildTextureStacks: []
