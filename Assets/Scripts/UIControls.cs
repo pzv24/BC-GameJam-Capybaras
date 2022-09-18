@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIControls : MonoBehaviour
 {
@@ -28,5 +29,10 @@ public class UIControls : MonoBehaviour
                 _showControlsText.SetActive(true);
             }
         }
+       
+    }
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
