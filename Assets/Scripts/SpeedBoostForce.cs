@@ -6,21 +6,17 @@ public class SpeedBoostForce : MonoBehaviour
 {
     [SerializeField] private float force = 10;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private bool _isActive = false;
 
     private void OnTriggerStay(Collider other)
     {
+        if (!_isActive) { return; }
         Rigidbody rigidbody = other.GetComponent<Rigidbody>();
         rigidbody.AddForce(transform.forward * force, ForceMode.Acceleration);
+    }
+
+    public void TurnOn()
+    {
+        _isActive = true;
     }
 }
