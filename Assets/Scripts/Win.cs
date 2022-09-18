@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip winSound;
     public GameObject _winUI;
     private void OnTriggerEnter(Collider other)
     {
@@ -11,5 +13,7 @@ public class Win : MonoBehaviour
         {
            _winUI.SetActive(true);
         }
+        audioSource.clip = winSound;
+        audioSource.Play();
     }
 }

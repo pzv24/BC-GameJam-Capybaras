@@ -19,6 +19,7 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] private float _incrementInterval = 0.05f;
 
     [Header("Sounds")]
+    [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip _launchMeow;
 
     private Vector3 _rotationDifferential;
@@ -76,6 +77,8 @@ public class BallLauncher : MonoBehaviour
 
     private void LaunchBall()
     {
+        audioSource.clip = _launchMeow;
+        audioSource.Play();
         GameObject ball = Instantiate(_ballPrefab, transform.position, transform.rotation);
         _ballArray[0] = ball;
         Rigidbody ballRB = ball.GetComponent<Rigidbody>();
