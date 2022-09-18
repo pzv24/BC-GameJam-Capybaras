@@ -2,43 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class BallLauncher : MonoBehaviour
 {
+    [Header("Plug In Values")]
     [SerializeField] private GameObject _ball;
     [SerializeField] private GameObject _arrow;
+    [SerializeField] private Image _arrowImage;
 
-    [Header("Arrow Data")]
+    [Header("Launcher")]
     [SerializeField] private float _turnSpeed = 5f;
-    [SerializeField] private float halfAngleRange = 70;
+    //[SerializeField] private float halfAngleRange = 70;
     [SerializeField] private float _forceBarCharge = 0.05f;
     [SerializeField] private float _forceMultiplier = 100;
+    [SerializeField] private float _incrementInterval = 0.05f;
 
-    public Camera mainCamera;
-    private Vector3 _mouseWorldLocation;
-    private Vector2 _mousePosition;
-    private Rigidbody _rb;
     private Vector3 _rotationDifferential;
     private float _forceCoef;
-    private float _incrementInterval = 0.1f;
     private bool _isChargeing;
-
-    Quaternion targetRotation;
-    private Quaternion currentRotation => transform.rotation;
-
-
-    private void Awake()
-    {
-        _rb = GetComponent<Rigidbody>();
-    }
+    private bool _canTurn = true;
     public void OnRotateLeft(InputValue value)
     {
+        if (!_canTurn) { return; }
         _rotationDifferential = new Vector3(0, -value.Get<float>() * _turnSpeed, 0);
     }
 
     public void OnRotateRight(InputValue value)
     {
-         _rotationDifferential = new Vector3(0, value.Get<float>() * _turnSpeed, 0);
+        if (!_canTurn) { return; }
+        _rotationDifferential = new Vector3(0, value.Get<float>() * _turnSpeed, 0);
     }
 
     IEnumerator ChargeMeter()
@@ -48,10 +41,12 @@ public class BallLauncher : MonoBehaviour
             bool goingUp = true;
             while (goingUp)
             {
+                _isChargeing = true;
                 goingUp = CountUp();
                 if (_forceCoef > 1f) { goingUp = false; }
                 Debug.Log(_forceCoef);
                 yield return new WaitForSeconds(_incrementInterval);
+                _isChargeing = false;
             }
             while (!goingUp)
             {
@@ -78,26 +73,31 @@ public class BallLauncher : MonoBehaviour
     {
         GameObject ball = Instantiate(_ball, transform.position, transform.rotation);
         Rigidbody ballRB = ball.GetComponent<Rigidbody>();
-        ballRB.AddForce(transform.forward *_forceBarCharge * _forceMultiplier);
+        ballRB.AddForce(transform.forward *_forceCoef * _forceMultiplier);
 
     }
 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        _arrowImage.fillAmount = _forceCoef;
+        if (Input.GetKeyDown(KeyCode.Space) && _isChargeing == false)
         {
+            _rotationDifferential = Vector3.zero;
+            _canTurn = false;
             Debug.Log("Charging");
             StartCoroutine(ChargeMeter());
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            _isChargeing = false;
             StopAllCoroutines();
             LaunchBall();
+            _forceCoef = 0;
+            _canTurn = true;
         }
 
         transform.Rotate(_rotationDifferential * Time.deltaTime);
-        Debug.Log(_rotationDifferential);
     }
 }
