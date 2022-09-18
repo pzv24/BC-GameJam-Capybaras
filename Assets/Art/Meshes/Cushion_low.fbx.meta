@@ -3,7 +3,27 @@ guid: 45b59cfc2b3618c4fb14e5a1e004e1f0
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_ClothStrings
+    second: {fileID: 2100000, guid: ef80ab284c2f6e94a845051d91d01e4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CushionColour
+    second: {fileID: 2100000, guid: 32d400ca2d31a3a40940fa79e33576d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MetalRing
+    second: {fileID: 2100000, guid: 1a56f42becd4a0a4bbf99f09da9b2049, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Spring
+    second: {fileID: 2100000, guid: dbc9c1bfe8d22204f96dd8489cfc3d4b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

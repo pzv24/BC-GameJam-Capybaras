@@ -101,6 +101,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2266694859210787161}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1882153263761204950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760441755105329870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d320156488bb3684e8f3baf62ac7374a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotation: {x: 0, y: 0, z: 0}
+  _speed: 7000
 --- !u!114 &7758497555471849382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,4 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27da2991e91bde049b32c3f76226a5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulse: 20
+  impulse: 2000
