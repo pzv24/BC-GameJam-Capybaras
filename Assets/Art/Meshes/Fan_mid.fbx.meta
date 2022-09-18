@@ -3,7 +3,22 @@ guid: 40dbf18ac5260654086a848940425f56
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fan
+    second: {fileID: 2100000, guid: ba0db4b5525b2c84dbcb4347183c8d0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 2af6fc3670a7b0c4d969e105534fa9b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 483449ac03dcd9443981f0b64abaded2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

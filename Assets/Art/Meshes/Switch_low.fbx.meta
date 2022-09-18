@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_ButtonPlate
+    second: {fileID: 2100000, guid: c366d17e001e57946bedbc66a063a769, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_FanIcon
     second: {fileID: 2100000, guid: 48cb6f337dbd5564a8c22629ec9420d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_button
+    second: {fileID: 2100000, guid: d9ca2d7e236312548990b4b08b7aa7db, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
