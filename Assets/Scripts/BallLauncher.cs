@@ -18,6 +18,9 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] private float _forceMultiplier = 100;
     [SerializeField] private float _incrementInterval = 0.05f;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip _launchMeow;
+
     private Vector3 _rotationDifferential;
     private float _forceCoef;
     private bool _isChargeing;
