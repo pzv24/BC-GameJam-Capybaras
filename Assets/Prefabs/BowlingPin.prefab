@@ -2302,7 +2302,7 @@ GameObject:
   - component: {fileID: 393693091098525868}
   - component: {fileID: 2861085977193299414}
   m_Layer: 0
-  m_Name: Bowling Pin
+  m_Name: BowlingPin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
