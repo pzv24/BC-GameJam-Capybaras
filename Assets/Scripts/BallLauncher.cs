@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BallLauncher : MonoBehaviour
 {
     [Header("Plug In Values")]
-    [SerializeField] private GameObject _ball;
+    [SerializeField] private GameObject _ballPrefab;
     [SerializeField] private GameObject _arrow;
     [SerializeField] private Image _arrowImage;
 
@@ -22,6 +22,8 @@ public class BallLauncher : MonoBehaviour
     private float _forceCoef;
     private bool _isChargeing;
     private bool _canTurn = true;
+
+    private GameObject[] _ballArray = new GameObject[1];
     public void OnRotateLeft(InputValue value)
     {
         if (!_canTurn) { return; }
@@ -71,7 +73,8 @@ public class BallLauncher : MonoBehaviour
 
     private void LaunchBall()
     {
-        GameObject ball = Instantiate(_ball, transform.position, transform.rotation);
+        GameObject ball = Instantiate(_ballPrefab, transform.position, transform.rotation);
+        _ballArray[0] = ball;
         Rigidbody ballRB = ball.GetComponent<Rigidbody>();
         ballRB.AddForce(transform.forward *_forceCoef * _forceMultiplier);
 
@@ -80,8 +83,9 @@ public class BallLauncher : MonoBehaviour
 
     private void Update()
     {
+
         _arrowImage.fillAmount = _forceCoef;
-        if (Input.GetKeyDown(KeyCode.Space) && _isChargeing == false)
+        if (Input.GetKeyDown(KeyCode.Space) && _isChargeing == false && _ballArray[0] == null)
         {
             _rotationDifferential = Vector3.zero;
             _canTurn = false;
@@ -89,7 +93,7 @@ public class BallLauncher : MonoBehaviour
             StartCoroutine(ChargeMeter());
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && _ballArray[0] == null)
         {
             _isChargeing = false;
             StopAllCoroutines();

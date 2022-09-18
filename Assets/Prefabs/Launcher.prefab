@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d98f7aa38e6614cb478c322a89bd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ball: {fileID: 1406861763251211139, guid: 226d89902d793e44d97c19174f0efdd4, type: 3}
+  _ballPrefab: {fileID: 1406861763251211139, guid: 226d89902d793e44d97c19174f0efdd4,
+    type: 3}
   _arrow: {fileID: 2930278419897826734}
   _arrowImage: {fileID: 0}
   _turnSpeed: 100
