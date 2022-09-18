@@ -46,12 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d98f7aa38e6614cb478c322a89bd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballPrefab: {fileID: 0}
+  _ballPrefab: {fileID: 1406861763251211139, guid: 226d89902d793e44d97c19174f0efdd4,
+    type: 3}
   _arrow: {fileID: 2930278419897826734}
   _arrowImage: {fileID: 0}
   _turnSpeed: 100
   _forceBarCharge: 0.05
-  _forceMultiplier: 3000
+  _forceMultiplier: 80000
   _incrementInterval: 0.05
 --- !u!114 &325225835094452223
 MonoBehaviour:
@@ -159,7 +160,7 @@ PrefabInstance:
     - target: {fileID: 2355161260372666118, guid: 75eb712f69bfab2439f5c9d496e207ac,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2355161260372666118, guid: 75eb712f69bfab2439f5c9d496e207ac,
         type: 3}
@@ -205,12 +206,12 @@ PrefabInstance:
     - target: {fileID: 8117006059282846697, guid: 75eb712f69bfab2439f5c9d496e207ac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.64
+      value: -3.87
       objectReference: {fileID: 0}
     - target: {fileID: 8117006059282846697, guid: 75eb712f69bfab2439f5c9d496e207ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.08
+      value: 8.14
       objectReference: {fileID: 0}
     - target: {fileID: 8117006059282846697, guid: 75eb712f69bfab2439f5c9d496e207ac,
         type: 3}
